@@ -14,8 +14,8 @@ class CreateBrandsSalesTable extends Migration {
 	{
 		Schema::create('brands_sales', function(Blueprint $table)
 		{
-			$table->integer('brand_id');
-			$table->integer('sale_id');
+			$table->integer('brand_id')->unsigned();
+			$table->integer('sale_id')->unsigned();
 			$table->timestamps();
 			$table->primary(array('brand_id', 'sale_id'));
 

@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned()->nullable();
 			$table->integer('store_id')->unsigned()->nullable();
-			$table->integer('type_id');
+			$table->integer('type_id')->unsigned();
 			$table->tinyInteger('percentage')->nullable();
 			$table->integer('amount')->nullable();
 			$table->text('items');
@@ -29,7 +29,7 @@ class CreateSalesTable extends Migration {
 
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 			$table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
-			$table->foreign('type_id')->references('id')->on('types');
+			$table->foreign('type_id')->references('id')->on('sale_types');
 		});
 	}
 
