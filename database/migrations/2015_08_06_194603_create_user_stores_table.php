@@ -17,7 +17,6 @@ class CreateUserStoresTable extends Migration {
 			$table->integer('user_id')->unsigned();
 			$table->integer('store_id')->unsigned();
 			$table->tinyInteger('grading')->nullable();
-			$table->integer('number_of_views')->default(0);
 			$table->timestamps();
 
 			//delete is restricted in order to pass the views data to another table before delete

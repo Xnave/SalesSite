@@ -33,7 +33,7 @@ class CreateUserWatchedSalesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_sales');
+		Schema::drop('user_watched_sales');
 	}
 
 }
