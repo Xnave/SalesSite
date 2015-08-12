@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Sales <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Brands</a></li>
+        <li><a href="#">Stores</a></li>
 <!--
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -38,7 +39,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Stors</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/register">Regester</a></li>
 <!--
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
