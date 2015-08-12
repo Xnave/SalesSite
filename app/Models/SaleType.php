@@ -15,6 +15,6 @@ class SaleType extends Model
 
     public function sales()
     {
-        return $this->hasMany('Sale');
+        return $this->hasMany('App\Models\Sale');
     }
 }

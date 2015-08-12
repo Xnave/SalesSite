@@ -13,6 +13,6 @@ class Center extends Model {
     protected $fillable = ['name', 'address', 'phone_number'];
 
     public function stores(){
-        return $this->hasMany('Store');
+        return $this->hasMany('App\Models\Store');
     }
 }

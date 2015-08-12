@@ -8,14 +8,14 @@ class Brand extends Model {
     protected $fillable = ['name'];
 
     public function stores(){
-        return $this->hasMany('Store');
+        return $this->hasMany('App\Models\Store');
     }
 
     public function brandSales(){
-        return $this->belongsToMany('Sale');
+        return $this->belongsToMany('App\Models\Sale');
     }
 
     public function usersGraded(){
-        return $this->belongsToMany('User', 'user_brands')->withTimestamps()->withPivot('grading');
+        return $this->belongsToMany('App\Models\User', 'user_brands')->withTimestamps()->withPivot('grading');
     }
 }
