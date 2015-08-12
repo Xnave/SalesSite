@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 /**
  * Created by PhpStorm.
  * User: User

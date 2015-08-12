@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,7 +26,7 @@ class Sale extends Model {
     }
 
     public function usersGraded(){
-        return $this->belongsToMany('User', 'user_watched_sales')->withPivot('grading');
+        return $this->belongsToMany('User', 'user_watched_sales')->withTimestamps()->withPivot('grading');
     }
 }
 
