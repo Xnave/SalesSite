@@ -14,19 +14,19 @@ class Store extends Model {
     protected $fillable = ['name', 'phone', 'address', 'brand_id', 'center_id'];
 
     public function brand(){
-        return $this->belongsTo('Brand');
+        return $this->belongsTo('App\Models\Brand');
     }
 
-    public function Center(){
-        return $this->belongsTo('Center');
+    public function center(){
+        return $this->belongsTo('App\Models\Center');
     }
 
     public function sales(){
-        return $this->hasMany('Sale');
+        return $this->hasMany('App\Models\Sale');
     }
 
 
     public function usersGraded(){
-        return $this->belongsToMany('User', 'user_stores')->withTimestamps()->withPivot('grading');
+        return $this->belongsToMany('App\Models\User', 'user_stores')->withTimestamps()->withPivot('grading');
     }
 }
