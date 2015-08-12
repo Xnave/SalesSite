@@ -1,2 +1,2 @@
-cd C:\wamp\www\Server\SalesSite
+cd C:\wamp\www\SalesSite
 php artisan serve
