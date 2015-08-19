@@ -16,6 +16,8 @@ Route::get('/', function () {
 	return view('index');
 });
 
+Route::resource('Brand','BrandsController');
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
