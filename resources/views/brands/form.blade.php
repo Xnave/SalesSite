@@ -10,4 +10,3 @@
     {!! Form::file('image', ['accept' => "image/*"]) !!}
 </div>
 
-{!! Form::submit('Create New Brand', ['class' => 'btn btn-primary']) !!}
