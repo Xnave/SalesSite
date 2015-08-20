@@ -6231,3 +6231,35 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+
+
+/* Name Edit*/
+.createForm {
+  display: block;
+  width: 300px;
+  margin: auto;
+}
+
+/*   create brande   */
+
+.success {
+  color: green;
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+
+.failed {
+  color: red;
+  text-align: center;
+  margin: 20px auto;
+  display: block;
+}
+
+.create-title{
+  margin: auto auto 40px auto;
+  width: 300px;
+  text-decoration: underline;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* End Nave Edit*/
