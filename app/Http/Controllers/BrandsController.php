@@ -114,13 +114,7 @@ class BrandsController extends Controller {
 			if ($fileImage->isValid())
 			{
                 //avoiding dup images on brand
-				if (count(self::findImages($fileName)) > 0)
-				{
-                    foreach(self::findImages($fileName) as $existingImage)
-                    {
-                        \File::delete($existingImage);
-                    }
-				}
+                $this->deleteExistingImagesByFileName($fileName);
 
                 $ext = \Input::file('image')->getClientOriginalExtension();
                 $fileImage->move(
@@ -162,36 +156,46 @@ class BrandsController extends Controller {
 	 */
 	public function update($id)
 	{
+        $shouldStoreImage = true;
         $brand = \App\Models\Brand::findOrFail($id);
 
-
         $brandNewName = \Input::get('name');
-        try{
-            self::checkUniqeName($brandNewName);
-        }
-        //brand already exists, then only modify image.
-        catch(SaleSiteException $e)
+        if($brandNewName != $brand->name)
         {
             try{
-                self::storeImage();
+                self::checkUniqeName($brandNewName);
             }
-            catch(Exception $e)
-            {
-                return \Redirect::back()->withInput()->withErrors(new MessageBag(['replacing Image has not been set']));
+            catch(Exception $e) {
+                //brand already exists
+                return \Redirect::back()->withInput()->withErrors(new MessageBag([$e->getMessage()]));
             }
 
-            \Session::flash('success', 'Brand image successfully updated!');
-            return redirect()->back();
+            if(is_null(\Input::file('image'))){
+                // changing existing image name
+                $existingImage = $this->findImages($this->getFileName($brand->name))[0];
+                $ext = pathinfo($existingImage, PATHINFO_EXTENSION);
+                rename($existingImage, self::$brandImagePath . $brandNewName . '.' . $ext);
+                $shouldStoreImage = false;
+            }
+            else{
+                $this->deleteExistingImagesByFileName($this->getFileName($brand->name));
+            }
+
+            //saving to DB
+            $brand->name = $brandNewName;
+            $brand->save();
         }
 
-        // changing existing image name
-        $existingImage = $this->findImages($this->getFileName($brand->name))[0];
-        $ext = pathinfo($existingImage, PATHINFO_EXTENSION);
-        rename($existingImage, self::$brandImagePath . $brandNewName . '.' . $ext);
+        try{
+            if($shouldStoreImage){
+                self::storeImage();
+            }
+        }
+        catch(Exception $e)
+        {
+            return \Redirect::back()->withInput()->withErrors(new MessageBag(['replacing Image has not been set']));
+        }
 
-        //saving to DB
-        $brand->name = $brandNewName;
-        $brand->save();
         \Session::flash('success', 'Brand successfully updated!');
         return redirect()->back();
 	}
@@ -214,6 +218,18 @@ class BrandsController extends Controller {
     public function getFileName($brandName)
     {
         return str_replace(' ', '', $brandName);
+    }
+
+    /**
+     * @param $fileName
+     */
+    public function deleteExistingImagesByFileName($fileName)
+    {
+        if (count(self::findImages($fileName)) > 0) {
+            foreach (self::findImages($fileName) as $existingImage) {
+                \File::delete($existingImage);
+            }
+        }
     }
 
 }
