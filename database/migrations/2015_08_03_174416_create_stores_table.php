@@ -16,8 +16,8 @@ class CreateStoresTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name')->nullable();
-			$table->string('phone', 12)->nullable();
-			$table->string('address', 100);
+			$table->string('phone', 12)->nullable()->unique();
+			$table->string('address', 100)->unique();
 			$table->integer('brand_id')->unsigned()->nullable();
 			$table->integer('center_id')->unsigned()->nullable();
 			$table->timestamps();

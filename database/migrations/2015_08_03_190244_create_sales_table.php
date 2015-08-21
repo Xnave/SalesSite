@@ -30,6 +30,8 @@ class CreateSalesTable extends Migration {
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 			$table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
 			$table->foreign('type_id')->references('id')->on('sale_types');
+
+			$table->unique('store_id', 'type_id');
 		});
 	}
 

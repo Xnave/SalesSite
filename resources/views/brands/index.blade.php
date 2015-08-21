@@ -1,6 +1,5 @@
 @extends('app')
 
-<link rel="stylesheet" href="/css/create-objects.css">
 @section('content')
     @foreach($brands as $brand)
 
