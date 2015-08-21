@@ -18,4 +18,6 @@ class Brand extends Model {
     public function usersGraded(){
         return $this->belongsToMany('App\Models\User', 'user_brands')->withTimestamps()->withPivot('grading');
     }
+
+
 }
