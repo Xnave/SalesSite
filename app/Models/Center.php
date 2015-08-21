@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
  * Date: 10/08/2015
  * Time: 21:46
  */
-class Center extends Model {
+class Center extends ExtendedModel {
 
     //
     protected $fillable = ['name', 'address', 'phone_number'];
+    protected $nullable = ['phone_number'];
 
     public function stores(){
         return $this->hasMany('App\Models\Store');

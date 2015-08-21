@@ -91,7 +91,7 @@ class BrandsController extends Controller {
         $brand->save();
 
         \Session::flash('success', 'Upload successfully');
-        return \Redirect::to('/Brand/create');
+        return \Redirect::to('/Brands/create');
     }
 	public function storeImage()
 	{

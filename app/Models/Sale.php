@@ -2,10 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sale extends Model {
+class Sale extends ExtendedModel {
 
 	//
     protected $fillable = ['percentage', 'amount', 'items', 'text', 'start_day', 'end_day', 'type_id', 'store_id'];
+    protected $nullable = ['amount', 'percentage', 'store_id', 'user_id'];
 
     public function type(){
         return $this->belongsTo('App\Models\SaleType');

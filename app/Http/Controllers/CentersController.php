@@ -3,7 +3,12 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Models\Center;
+use Illuminate\Contracts\Validation\ValidationException;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
+use League\Flysystem\Exception;
 
 class CentersController extends Controller {
 
@@ -36,7 +41,29 @@ class CentersController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $center = new \App\Models\Center(\Input::all());
+
+        //validate
+        $file = array('name' => $center->name, 'address' => $center->address);
+        $rules = array('name' => 'unique:centers|required', 'address' => 'unique:centers|required'); //mimes:jpeg,bmp,png and for max size max:10000
+        $validator = \Validator::make($file, $rules);
+
+        if ($validator->fails())
+        {
+            return \Redirect::back()->withInput()->withErrors($validator);
+        }
+
+        //try save
+        try{
+            $center->save();
+        }
+        catch(\Exception $e)
+        {
+            return \Redirect::back()->withInput()->withErrors(new MessageBag(array($e->getMessage())));
+        }
+
+        \Session::flash('success', 'Upload successfully');
+        return \Redirect::back();
 	}
 
 	/**
@@ -71,7 +98,27 @@ class CentersController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+        $rules = array(
+            'name'       => 'required',
+            'address'      => 'required',
+            'phone_number' => 'min:9'
+        );
+        $validator = \Validator::make(\Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return \Redirect::back()->withErrors($validator)->withInput();
+        } else {
+            // store
+            $center = \App\Models\Center::find($id);
+            $center->name       = \Input::get('name');
+            $center->address      = \Input::get('address');
+            $center->phone_number = \Input::get('phone_number');
+            $center->save();
+
+            // redirect
+            \Session::flash('success', 'Successfully updated center!');
+            return \Redirect::back();
+        }
 	}
 
 	/**

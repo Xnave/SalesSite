@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <h1 class="create-title">Create new Brand</h1>
+        <h1 class="create-title">Create new Center</h1>
 
         {!! Form::open(array('action' => array('CentersController@store'), 'class' => 'createForm', 'files'=>true)) !!}
         @include('centers.form')

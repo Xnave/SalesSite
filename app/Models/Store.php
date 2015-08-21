@@ -8,10 +8,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Store extends Model {
+class Store extends ExtendedModel {
 
     //
     protected $fillable = ['name', 'phone', 'address', 'brand_id', 'center_id'];
+    protected $nullable = ['name', 'phone', 'brand_id', 'center_id'];
 
     public function brand(){
         return $this->belongsTo('App\Models\Brand');
