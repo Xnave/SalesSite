@@ -6,8 +6,6 @@
  * Time: 21:44
  */
 
-use Illuminate\Database\Eloquent\Model;
-
 class Store extends ExtendedModel {
 
     //

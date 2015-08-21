@@ -3,7 +3,7 @@
 @section('content')
     @foreach($brands as $brand)
 
-        <div href="#" class="thumbnail col-xs-4 col-md-2" style="margin-right: 10px;">
+        <div class="thumbnail col-xs-4 col-md-2" style="margin-right: 10px;">
             <h3>{{ $brand->name }}</h3>
 
             {{-- Get image by brand name (without spaces) --}}

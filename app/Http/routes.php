@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::resource('Brands','BrandsController');
 Route::resource('Centers', 'CentersController');
+Route::resource('Stores', 'StoresController');
 
 Route::get('home', 'HomeController@index');
 
