@@ -20,12 +20,12 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'admin.auth'] , function() {
 	Route::resource('Brands', 'BrandsController');
+	Route::resource('Centers', 'CentersController'); /* TODO: show all records to the public */
+	Route::resource('Stores', 'StoresController'); /* TODO: show all records to the public */
 } );
 
 Route::get('allBrands','BrandsController@publicIndex');
 
-Route::resource('Centers', 'CentersController');
-Route::resource('Stores', 'StoresController');
 
 Route::get('home', 'HomeController@index');
 
@@ -35,3 +35,7 @@ Route::controllers([
 ]);
 
 Route::resource('brand', 'BrandController');
+
+Route::get('{any}', function(){
+	return view('404');
+})->where('any', '.+');

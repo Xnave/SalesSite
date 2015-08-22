@@ -40,7 +40,7 @@ class AdminAuthentication {
 			}
 		}
 
-		return response('Page Not Found.', 404);
+		return view('404');
 	}
 
 }
