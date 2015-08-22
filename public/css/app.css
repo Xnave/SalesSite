@@ -6278,6 +6278,10 @@ label,
     max-height: 70px;
     margin-bottom: 10px
 }
+
+.sub-menu li{
+    padding: 0 0 0 40px;
+}
 /* End Nave Edit*/
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)

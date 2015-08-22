@@ -8,17 +8,17 @@
             </a>
         </li>
         <li> <a href="/Stores">stores</a>
-            <ul>
-                <li><a href="/Stores/create">create</a></li>
+            <ul class="sub-menu">
+                <li ><a href="/Stores/create">create</a></li>
             </ul>
         </li>
         <li> <a href="/Centers">centers</a>
-            <ul>
+            <ul class="sub-menu">
                 <li><a href="/Centers/create">create</a></li>
             </ul>
         </li>
         <li> <a href="/Brands">brands</a>
-            <ul>
+            <ul class="sub-menu">
                 <li><a href="/Brands/create">create</a></li>
             </ul>
         </li>
