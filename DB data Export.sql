@@ -21,7 +21,7 @@
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
-INSERT INTO `brands` VALUES (1,'Zara','2015-08-12 16:02:13','2015-08-12 16:02:13'),(2,'Renuar','2015-08-12 16:10:49','2015-08-12 16:10:49'),(3,'Fox2','2015-08-12 16:12:34','2015-08-20 15:39:02'),(4,'Lee Cooper','2015-08-12 20:40:51','2015-08-12 20:40:53'),(13,'nave4','2015-08-19 20:49:12','2015-08-20 16:36:27');
+INSERT INTO `brands` VALUES (1,'Zara','2015-08-12 16:02:13','2015-08-12 16:02:13'),(2,'Renuar','2015-08-12 16:10:49','2015-08-12 16:10:49'),(3,'Fox2','2015-08-12 16:12:34','2015-08-21 09:44:12'),(4,'Lee Cooper','2015-08-12 20:40:51','2015-08-12 20:40:53');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -40,7 +40,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `centers` WRITE;
 /*!40000 ALTER TABLE `centers` DISABLE KEYS */;
-INSERT INTO `centers` VALUES (1,'Kenyon Holon','mifratz shlomo 5, Holon','0526595632','2015-08-12 16:04:02','2015-08-12 16:04:02'),(2,'Kenyon Hazaav','hankin 7, Holon',NULL,'2015-08-12 16:11:02','2015-08-12 16:11:02'),(3,'G center','Lazarov 1, Holon','03-5595644','2015-08-12 16:12:39','2015-08-12 16:12:39');
+INSERT INTO `centers` VALUES (1,'Kenyon Holon','mifratz shlomo 5, Holon','0526595632','2015-08-12 16:04:02','2015-08-12 16:04:02'),(2,'Kenyon Hazaav','hankin 7, Holon','','2015-08-12 16:11:02','2015-08-12 16:11:02'),(3,'G center','Lazarov 1, Holon','03-5595644','2015-08-12 16:12:39','2015-08-21 07:38:26');
 /*!40000 ALTER TABLE `centers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,7 +50,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2015_08_02_183717_create_brands_table',1),('2015_08_03_075800_create_centers_table',1),('2015_08_03_174416_create_stores_table',1),('2015_08_03_184921_create_sale_types_table',1),('2015_08_03_190244_create_sales_table',1),('2015_08_05_183943_create_brands_sales_table',1),('2015_08_06_194540_create_user_brands_table',1),('2015_08_06_194603_create_user_stores_table',1),('2015_08_06_201839_create_user_watched_sales_table',1);
+INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2015_08_02_183717_create_brands_table',1),('2015_08_03_075800_create_centers_table',1),('2015_08_03_174416_create_stores_table',1),('2015_08_03_184921_create_sale_types_table',1),('2015_08_03_190244_create_sales_table',1),('2015_08_05_183943_create_brands_sales_table',1),('2015_08_06_194540_create_user_brands_table',1),('2015_08_06_194603_create_user_stores_table',1),('2015_08_06_201839_create_user_watched_sales_table',1),('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2015_08_02_183717_create_brands_table',1),('2015_08_03_075800_create_centers_table',1),('2015_08_03_174416_create_stores_table',1),('2015_08_03_184921_create_sale_types_table',1),('2015_08_03_190244_create_sales_table',1),('2015_08_05_183943_create_brands_sales_table',1),('2015_08_06_194540_create_user_brands_table',1),('2015_08_06_194603_create_user_stores_table',1),('2015_08_06_201839_create_user_watched_sales_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `stores` WRITE;
 /*!40000 ALTER TABLE `stores` DISABLE KEYS */;
-INSERT INTO `stores` VALUES (1,NULL,'052-6595634','somwhere in holon',3,3,'2015-08-12 16:13:02','2015-08-12 16:13:02'),(2,'Rami Cloths','052-6595234','somewhere in eilat',NULL,1,'2015-08-12 20:47:16','2015-08-12 20:47:18');
+INSERT INTO `stores` VALUES (1,NULL,'052-6595634','somwhere in holon',3,3,'2015-08-12 16:13:02','2015-08-12 16:13:02'),(2,'Rami Cloths','052-6595233','somewhere in eilat',NULL,1,'2015-08-12 20:47:16','2015-08-21 17:13:04'),(11,'nave shop',NULL,'ראשון לציון',NULL,2,'2015-08-21 17:14:24','2015-08-21 17:14:24');
 /*!40000 ALTER TABLE `stores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'nave','eni','nave@eni.com','$2y$10$Ba7Xlp6bjNJS/5C48Nkkoe9TPRj9WZNSN9pC1QR4QZgUFBqs9qRoK','UC9PaaAnVhXyNOq4b6yY1ivwvhcg1HoHdjcn7GtbaTDrARjsAIDqh0F86okm','2015-08-12 17:52:03','2015-08-12 17:53:46'),(2,'doron','mor','doron@mor.com','$2y$10$tkrxkf/Wni7zdd3WVkk0uOFXe9GEn5IZ4SVuzyL1htCUWv2ZMckcy',NULL,'2015-08-12 17:54:20','2015-08-12 17:54:20');
+INSERT INTO `users` VALUES (1,'nave','eni','nave@eni.com','$2y$10$Ba7Xlp6bjNJS/5C48Nkkoe9TPRj9WZNSN9pC1QR4QZgUFBqs9qRoK','UC9PaaAnVhXyNOq4b6yY1ivwvhcg1HoHdjcn7GtbaTDrARjsAIDqh0F86okm','2015-08-12 17:52:03','2015-08-12 17:53:46'),(2,'doron','mor','doron@mor.com','$2y$10$tkrxkf/Wni7zdd3WVkk0uOFXe9GEn5IZ4SVuzyL1htCUWv2ZMckcy','CCIKYZolC4oR6Yzn5ssxabKjl1YbUSOW4nJmdpUZYQw0Ad3PQVCL01SIaycZ','2015-08-12 17:54:20','2015-08-22 11:49:15');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-08-21 12:21:31
+-- Dump completed on 2015-08-22 18:03:47
