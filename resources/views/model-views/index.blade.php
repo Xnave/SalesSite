@@ -6,7 +6,7 @@
         @foreach($models as $model)
 
             <div class="thumbnail model-tumbnail col-xs-4 col-md-2">
-                @include($modelDetails, ['$model' => $model])
+                @include('model-views.'.$modelDetails, ['$model' => $model])
 
                 <div>
                     <a href="{{ action(ucfirst($modelName).'Controller@edit', $model->id) }}" class="btn btn-primary">Edit {{ucfirst($modelName)}}</a>

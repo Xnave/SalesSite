@@ -11,7 +11,7 @@
 
         {!! Form::model($model, array('action' => array(ucfirst($modelName).'Controller@update', $model->id), 'method' => 'PUT'
                                     , 'class' => 'createForm', 'files'=>true)) !!}
-        @include($modelName.'.form')
+        @include('model-views.'.$modelName.'.form')
         {!! Form::submit('Update '.substr($modelName, 0, -1), ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
 
