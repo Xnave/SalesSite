@@ -15,8 +15,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Sales <span class="sr-only">(current)</span></a></li>
-        <li><a href="Brands">Brands</a></li>
-        <li><a href="Stores">Stores</a></li>
+        <li><a href="allBrands">Brands</a></li>
+        <li><a href="allStores">Stores</a></li>
 <!--
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
