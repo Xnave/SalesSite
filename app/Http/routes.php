@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 
-Route::group(['middleware' => 'auth'] , function() {
+Route::group(['middleware' => 'admin.auth'] , function() {
 	Route::resource('Brands', 'BrandsController');
 } );
 
