@@ -50,8 +50,16 @@ class BrandsController extends Controller {
 	public function publicIndex()
 	{
 		$brands = \App\Models\Brand::all();
+        $newBrands = new \stdClass();
 
-		return view('brands');
+        foreach($brands as $brand){
+            $newBrands->name = $brand->name;
+            $newBrands->image = $this->findImages($this->getFileName($brand->name))[0];
+        }
+
+        var_dump($brands);
+        exit();
+//		return view('brands')->with('brands', $brands);
 	}
 
     public function index()

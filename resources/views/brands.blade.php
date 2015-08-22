@@ -21,7 +21,7 @@
         <div class="warrper">
 
 
-            <?php include_once 'nav.php'; ?>
+                @include('nav')
 
             <div class="headingSection paper"> 
                 <h1>Sales</h1>    
@@ -32,15 +32,23 @@
 
                 <div class="row">
 
-                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <div class="saleBrande" style="background-image: url(images/brands/Zara.png);">
+
+                    @foreach ($brands as $brand)
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                                <div class="saleBrande" style="background-image: url(images/brands/{{$brand->name }}.png);">
+                                </div>
+<!--                                <div class="saleText more">-->
+<!--                                    <p class="low">30% Discount</p>-->
+<!--                                </div>-->
+                            </a>
                         </div>
-                        <div class="saleText more">
-                            <p class="low">30% Discount</p>
-                        </div>
-                    </a>
-                  </div>
+                    @endforeach
+
+
+
+
+
 
               </div>
             
