@@ -24,8 +24,8 @@
                 @include('nav')
 
             <div class="headingSection paper"> 
-                <h1>Sales</h1>    
-                <h2>Wellcome to the sales page</h2>
+                <h1>Brands</h1>
+                <h2>Wellcome to the brands page</h2>
             </div>
 
             <div class="sales paper">
@@ -34,7 +34,7 @@
 
                     @for ($i=0; $i<count($newBrands); $i++)
                         <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail" data-name="{{$name[$i]}}">
+                            <a href="/allBrands/{{$name[$i]}}" class="thumbnail" data-name="{{$name[$i]}}">
                                 <div class="saleBrande" style="background-image: url({{$newBrands[$i] }});">
                                 </div>
                             </a>
