@@ -21,7 +21,7 @@ class CentersController extends Controller {
 	{
 		$centers = \App\Models\Center::all();
 
-		return view('centers.index')->with(compact('centers'));
+		return view('model-views.index')->with(array('modelName' => 'centers', 'models' => $centers, 'modelDetails' => 'centers.details'));
 	}
 
 	/**
@@ -31,7 +31,7 @@ class CentersController extends Controller {
 	 */
     public function create()
     {
-        return view('centers.create');
+        return view('model-views.create')->with(array('modelName' => 'centers'));
     }
 
 	/**
@@ -87,7 +87,7 @@ class CentersController extends Controller {
 	{
 		$center = \App\Models\Center::findOrFail($id);
 
-		return view('centers.edit')->with(compact('center'));
+		return view('model-views.edit')->with(array('modelName' => 'centers', 'model' => $center));
 	}
 
 	/**
@@ -129,7 +129,11 @@ class CentersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $center = \App\Models\Center::findOrFail($id);
+        $center->delete();
+
+        \Session::flash('success', 'Center successfully deleted!');
+        return \Redirect::back();
 	}
 
 }

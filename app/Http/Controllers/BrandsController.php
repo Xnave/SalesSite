@@ -51,7 +51,8 @@ class BrandsController extends Controller {
 	{
 		$brands = \App\Models\Brand::all();
 
-		return view('brands.index')->with(compact('brands'))
+		return view('model-views.index')->with(array('modelName' => 'brands', 'models' => $brands))
+                                   ->with('modelDetails' , 'brands.details')
                                    ->with('brandImagePublicPath', self::$brandImagePublicPath)
                                    ->with('brandImagePath', self::$brandImagePath);
 	}
@@ -63,7 +64,7 @@ class BrandsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('brands.create');
+		return view('model-views.create')->with(array('modelName' => 'brands'));
 	}
 
 	/**
@@ -145,7 +146,7 @@ class BrandsController extends Controller {
 	{
         $brand = \App\Models\Brand::findOrFail($id);
 
-        return view('brands.edit')->with(compact('brand'));
+        return view('model-views.edit')->with(array('modelName' => 'brands', 'model' => $brand));
 	}
 
 	/**
@@ -208,7 +209,11 @@ class BrandsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $brand = \App\Models\Brand::findOrFail($id);
+        $brand->delete();
+
+        \Session::flash('success', 'Brand successfully deleted!');
+        return \Redirect::back();
 	}
 
     /**

@@ -17,7 +17,7 @@ class StoresController extends Controller {
 	{
 		$stores = \App\Models\Store::all();
 
-		return view('stores.index')->with(compact('stores'));
+		return view('model-views.index')->with(array('modelName' => 'stores', 'models' => $stores, 'modelDetails' => 'stores.details'));
 	}
 
 	/**
@@ -27,7 +27,7 @@ class StoresController extends Controller {
 	 */
 	public function create()
 	{
-		return view('stores.create');
+		return view('model-views.create')->with(array('modelName' => 'stores'));
 	}
 
 	/**
@@ -65,7 +65,7 @@ class StoresController extends Controller {
 	{
 		$store = \App\Models\Store::findOrFail($id);
 
-		return view('stores.edit')->with(compact('store'));
+		return view('model-views.edit')->with(array('modelName' => 'stores', 'model' => $store));
 	}
 
 	/**
@@ -93,7 +93,11 @@ class StoresController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$store = \App\Models\Store::findOrFail($id);
+		$store->delete();
+
+		\Session::flash('success', 'Store successfully deleted!');
+		return \Redirect::back();
 	}
 
 	/**
