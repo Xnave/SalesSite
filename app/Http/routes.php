@@ -16,7 +16,14 @@ Route::get('/', function () {
 	return view('index');
 });
 
-Route::resource('Brands','BrandsController');
+
+
+Route::group(['middleware' => 'auth'] , function() {
+	Route::resource('Brands', 'BrandsController');
+} );
+
+Route::get('allBrands','BrandsController@publicIndex');
+
 Route::resource('Centers', 'CentersController');
 Route::resource('Stores', 'StoresController');
 

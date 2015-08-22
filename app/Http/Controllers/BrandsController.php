@@ -47,7 +47,14 @@ class BrandsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function publicIndex()
+	{
+		$brands = \App\Models\Brand::all();
+
+		return view('brands');
+	}
+
+    public function index()
 	{
 		$brands = \App\Models\Brand::all();
 
