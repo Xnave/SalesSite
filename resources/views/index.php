@@ -34,7 +34,7 @@
 
                   <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <div class="saleBrande" style="background-image: url(images/2000px-Zara_Logo_2.svg.png);">
+                        <div class="saleBrande" style="background-image: url(images/brands/Zara.png);">
                         </div>
                         <div class="saleText more">
                             <p class="low">30% Discount</p>
@@ -44,7 +44,7 @@
 
                     <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <div class="saleBrande" style="background-image: url(images/logo-1.png);">
+                        <div class="saleBrande" style="background-image: url(images/brands/Zara.png);">
                         </div>
                         <div class="saleText more">
                             <p class="middle">50% Discount</p>
@@ -55,7 +55,7 @@
                     <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
 <!--                        <div class="icon icon-burst"></div>-->
-                        <div class="saleBrande" style="background-image: url(images/GetImg.png);">
+                        <div class="saleBrande" style="background-image: url(images/brands/LeeCooper.png);">
                         </div>
                         <div class="saleText more">
                             <p class="middle">50% Discount</p>
@@ -66,7 +66,7 @@
                     <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
 <!--                        <div class="icon icon-burst"></div>-->
-                        <div class="saleBrande" style="background-image: url(images/GetImg.png);">
+                        <div class="saleBrande" style="background-image: url(images/brands/LeeCooper.png);">
                         </div>
                         <div class="saleText more">
                             <p class="middle">50% Discount</p>
