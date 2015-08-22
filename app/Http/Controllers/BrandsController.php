@@ -51,15 +51,21 @@ class BrandsController extends Controller {
 	{
 		$brands = \App\Models\Brand::all();
         $newBrands = new \stdClass();
+        $i =0;
 
         foreach($brands as $brand){
-            $newBrands->name = $brand->name;
-            $newBrands->image = $this->findImages($this->getFileName($brand->name))[0];
+            $newBrands->name[$i] = $brand->name;
+
+            $pos = strpos($this->findImages($this->getFileName($brand->name))[0], "/images");
+            $url = substr($this->findImages($this->getFileName($brand->name))[0], $pos);
+
+            $newBrands->image[$i] = $url;
+            $i++;
         }
 
-        var_dump($brands);
-        exit();
-//		return view('brands')->with('brands', $brands);
+//        var_dump($newBrands->image);
+//        exit();
+		return view('brands')->with(['newBrands'=> $newBrands->image, 'name'=> $newBrands->name]);
 	}
 
     public function index()

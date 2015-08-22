@@ -32,18 +32,14 @@
 
                 <div class="row">
 
-
-                    @foreach ($brands as $brand)
+                    @for ($i=0; $i<count($newBrands); $i++)
                         <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <div class="saleBrande" style="background-image: url(images/brands/{{$brand->name }}.png);">
+                            <a href="#" class="thumbnail" data-name="{{$name[$i]}}">
+                                <div class="saleBrande" style="background-image: url({{$newBrands[$i] }});">
                                 </div>
-<!--                                <div class="saleText more">-->
-<!--                                    <p class="low">30% Discount</p>-->
-<!--                                </div>-->
                             </a>
                         </div>
-                    @endforeach
+                    @endfor
 
 
 
